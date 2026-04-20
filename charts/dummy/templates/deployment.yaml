@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "dummy.fullname" . }}
+  labels:
+    {{- include "dummy.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "dummy.SpecselectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "dummy.PodselectorLabels" . | nindent 8 }}
+      annotations:
+        loki.grafana.com/format: "json"
+        loki.grafana.com/drop-probes: "true"
+    spec:
+      serviceAccountName: dummy
+      securityContext:
+        runAsUser: 1000
+      terminationGracePeriodSeconds: 60
+      containers:
+        - name: dummy
+          image: "crccheck/hello-world:latest"
+          ports:
+            - containerPort: 8000
+          command: ["/bin/bash", "-c"]
+          args: ["gunicorn -c config/gunicorn/gunicorn_config_{{ .Values.env }}.py"]
+
