@@ -19,6 +19,8 @@ spec:
       releaseName: nginx
       valuesObject:
         nameOverride: "nginx"
+        service:
+          type: ClusterIP
   syncPolicy:
     automated:
       allowEmpty: false
