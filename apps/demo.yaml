@@ -12,7 +12,7 @@ spec:
   project: default
   source:
     path: envs/demo
-    repoURL: https://github.com/anemoitech/14p-helm-charts
+    repoURL: https://github.com/smantzou/app-of-apps-meetup-demo.git
     targetRevision: main
     directory:
       recurse: true
