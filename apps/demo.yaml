@@ -4,7 +4,7 @@ kind: Application
 metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
-  name: apps-of-apps-meetup-demo
+  name: app-of-apps-meetup-demo
   namespace: argocd
 spec:
   destination:
