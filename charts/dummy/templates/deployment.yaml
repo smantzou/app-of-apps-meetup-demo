@@ -26,6 +26,4 @@ spec:
           image: "crccheck/hello-world:latest"
           ports:
             - containerPort: 8000
-          command: ["/bin/bash", "-c"]
-          args: ["gunicorn -c config/gunicorn/gunicorn_config_{{ .Values.env }}.py"]
 
