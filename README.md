@@ -53,6 +53,25 @@ All applications use the same automated sync policy:
 | `CreateNamespace: true` | Namespaces are created automatically if they don't exist |
 | `PruneLast: true` | Deletions happen after all other changes are applied |
 
+## Connecting the repository to ArgoCD
+
+Go to **Settings → Repositories → Connect Repo** in the ArgoCD UI and select **HTTPS**.
+
+**Public repo** — only the URL is required, no credentials needed:
+
+| Field | Value |
+|---|---|
+| Repository URL | `https://github.com/smantzou/app-of-apps-meetup-demo.git` |
+| Everything else | leave blank |
+
+**Private repo** — add a GitHub Personal Access Token (PAT):
+
+| Field | Value |
+|---|---|
+| Repository URL | `https://github.com/smantzou/app-of-apps-meetup-demo.git` |
+| Username | your GitHub username |
+| Password | your PAT (GitHub → Settings → Developer settings → Personal access tokens → `repo` scope) |
+
 ## Setup
 
 **Prerequisites:** minikube, kubectl, helm, argocd CLI
