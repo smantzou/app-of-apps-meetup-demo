@@ -19,6 +19,8 @@ spec:
       releaseName: nginx
       valuesObject:
         nameOverride: "nginx"
+        tls:
+          enabled: false
         service:
           type: ClusterIP
         serverBlock: |-
