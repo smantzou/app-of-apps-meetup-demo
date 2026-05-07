@@ -24,7 +24,7 @@ spec:
         service:
           type: ClusterIP
         readinessProbe:
-          initialDelaySeconds: 30
+          initialDelaySeconds: 20
         serverBlock: |-
           server {
             listen 8080;
