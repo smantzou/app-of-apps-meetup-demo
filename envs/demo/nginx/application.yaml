@@ -23,6 +23,8 @@ spec:
           enabled: false
         service:
           type: ClusterIP
+        readinessProbe:
+          initialDelaySeconds: 30
         serverBlock: |-
           server {
             listen 8080;
